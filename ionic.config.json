@@ -1,0 +1,8 @@
+{
+  "name": "blokcijferapp",
+  "app_id": "4e857586",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
