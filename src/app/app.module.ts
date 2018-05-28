@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Am1aPage } from '../pages/am1a/am1a';
 import { Am1bPage } from '../pages/am1b/am1b';
 import { Am1cPage } from '../pages/am1c/am1c';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -25,7 +26,8 @@ import { GradesProvider } from '../providers/grades/grades';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

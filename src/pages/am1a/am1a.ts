@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GradesProvider } from '../../providers/grades/grades';
-
 /**
  * Generated class for the Am1aPage page.
  *
@@ -15,33 +14,19 @@ import { GradesProvider } from '../../providers/grades/grades';
   templateUrl: 'am1a.html',
 })
 export class Am1aPage {
-  public userinfo = [{"firstname": "Dagobert",
-                     "infix": "",
-                     "lastname": "Duck",
-                     "residence": "Duckstad",
-                     "absence": "634/123",
-                     "age": 86,
-                     "photo": "./assets/imgs/dagobert.png"},  
-                      {"firstname": "Zwarte",
-                      "infix": "",
-                      "lastname": "Magica",
-                      "residence": "Duckstad",
-                      "absence": "666/13",
-                      "age": 150,
-                      "photo": "./assets/imgs/magica.png"},
-                      {"firstname": "Zwarte",
-                      "infix": "",
-                      "lastname": "Magica",
-                      "residence": "Duckstad",
-                      "absence": "666/13",
-                      "age": 150,
-                      "photo": "./assets/imgs/magica.png"}];
+  public userinfo = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public gradesProvider: GradesProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Am1aPage');
+    this.gradesProvider.getGrades().subscribe((data: any[]) => {
+      console.log(data);
+      this.userinfo = data;
+    });
   }
 
 }
