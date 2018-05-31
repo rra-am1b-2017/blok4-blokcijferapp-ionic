@@ -12,10 +12,10 @@
   "absence": "666/13",
   "age": 150,
   "photo": "./assets/imgs/magica.png"},
-  {"firstname": "Zwarte",
+  {"firstname": "Zware",
   "infix": "",
-  "lastname": "Magica",
-  "residence": "Duckstad",
-  "absence": "666/13",
-  "age": 150,
-  "photo": "./assets/imgs/magica.png"}]
+  "lastname": "Jongens",
+  "residence": "Rotterdam",
+  "absence": "666/666",
+  "age": 86,
+  "photo": "./assets/imgs/zwarejongens.png"}]

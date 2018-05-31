@@ -16,7 +16,7 @@
 <ion-content padding>
  <div *ngFor="let user of userinfo">
   <ion-card>
-    <img src="{{user.photo}}"/>
+    <img src="{{user.photoPath}}"/>
     <ion-card-content>
       <ion-card-title>
         {{user.firstname}} {{user.infix}} {{user.lastname}}
@@ -26,7 +26,7 @@
       <h5>Absentie</h5>
       <p>{{user.absence}}</p>
       <h5>Leeftijd</h5>
-      <p>{{user.age}}</p>
+      <p>{{user.birthday}}</p>
     </ion-card-content>
   </ion-card>
  </div> 
