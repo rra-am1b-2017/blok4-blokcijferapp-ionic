@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GradesProvider } from '../../providers/grades/grades';
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the Am1aPage page.
  *
@@ -18,7 +19,8 @@ export class Am1aPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public gradesProvider: GradesProvider) {
+              public gradesProvider: GradesProvider,
+              public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -27,6 +29,23 @@ export class Am1aPage {
       console.log(data);
       this.userinfo = data;
     });
+  }
+
+  public changeResidence(residence) {
+    console.log("Mijn woonplaats is: " + residence);
+
+    let changeResidenceInDb = this.alertCtrl.create({title : "Huidige Woonplaats: " + residence,
+                                                     message: "Voer een nieuwe woonplaats in:" ,
+                                                     inputs: [{type: "text", name: "newResidence"}],
+                                                     buttons: [{text: "Annuleren"},
+                                                               {text: "Voeg toe",
+                                                                handler: function () {
+                                                                  console.log("Er is op mij geklikt");
+                                                                }}]
+                                                      
+                                                     });
+
+    changeResidenceInDb.present();
   }
 
 }
