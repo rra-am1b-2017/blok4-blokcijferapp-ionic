@@ -39,9 +39,11 @@ export class Am1aPage {
                                                      inputs: [{type: "text", name: "newResidence"}],
                                                      buttons: [{text: "Annuleren"},
                                                                {text: "Voeg toe",
-                                                                handler: () => {  // Dit is een Arrow-Functie
+                                                                handler: (alertData) => {  // Dit is een Arrow-Functie
                                                                   console.log("Er is op mij geklikt");
-                                                                  this.gradesProvider.updateResidence(id, residence);
+                                                                  console.log("De volgende stad in ingevoerd: " + alertData.newResidence);                                                                  
+                                                                  this.gradesProvider.updateResidence(id, alertData.newResidence);
+                                                                  this.navCtrl.push(Am1aPage);
                                                                 }}]
                                                       
                                                      });

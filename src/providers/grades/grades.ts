@@ -30,7 +30,9 @@ export class GradesProvider {
     params = params.set("residence", residence );
 
 
-    this.http.post(this.update_residence_url, params, {responseType: "text"});
+    this.http.post(this.update_residence_url, params, {responseType: "json"}).subscribe((data: any[]) => {
+      console.log(data);
+    });
 
   }
 
