@@ -34,19 +34,20 @@ export class Am1aPage {
   public changeResidence(id, residence) {
     console.log("Mijn woonplaats is: " + residence);
 
-    let changeResidenceInDb = this.alertCtrl.create({title : "Huidige Woonplaats: " + residence,
-                                                     message: "Voer een nieuwe woonplaats in:" ,
-                                                     inputs: [{type: "text", name: "newResidence"}],
-                                                     buttons: [{text: "Annuleren"},
-                                                               {text: "Voeg toe",
-                                                                handler: (alertData) => {  // Dit is een Arrow-Functie
-                                                                  console.log("Er is op mij geklikt");
-                                                                  console.log("De volgende stad in ingevoerd: " + alertData.newResidence);                                                                  
-                                                                  this.gradesProvider.updateResidence(id, alertData.newResidence);
-                                                                  this.navCtrl.push(Am1aPage);
-                                                                }}]
-                                                      
-                                                     });
+    let changeResidenceInDb = 
+           this.alertCtrl.create({title : "Huidige Woonplaats: " + residence,
+                                  message: "Voer een nieuwe woonplaats in:" ,
+                                  inputs: [{type: "text", name: "newResidence"}],
+                                  buttons: [{text: "Annuleren"},
+                                            {text: "Voeg toe",
+                                            handler: (alertData) => {  // Dit is een Arrow-Functie
+                                              console.log("Er is op mij geklikt");
+                                              console.log("De volgende stad in ingevoerd: " + alertData.newResidence);                                                                  
+                                              this.gradesProvider.updateResidence(id, alertData.newResidence);
+                                              this.navCtrl.push(Am1aPage);
+                                            }}]
+                                  
+                                  });
 
     changeResidenceInDb.present();
   }
